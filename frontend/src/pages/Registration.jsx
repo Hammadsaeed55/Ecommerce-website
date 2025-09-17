@@ -42,7 +42,8 @@ const Registration = () => {
     let email = user.email
     const result = await axios.post(serverUrl + '/api/auth/googlelogin',{name, email},{withCredentials:true})
     console.log(result.data)
-
+    getCurrentUser()
+    navigate('/')
   }catch(error){
       console.log(error)
   }
