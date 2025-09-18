@@ -40,18 +40,18 @@ const Carousel = () => {
   };
 
   return (
-    <div className="pt-[90px] h-[calc(100vh-70px)] w-full relative overflow-hidden">
+    <div className="pt-[70px] h-[calc(100vh-10px)] w-full relative overflow-hidden">
       {/* Image */}
       <img
         src={images[currentIndex]}
-        alt="Banquet Hall"
+        alt="image"
         className="w-full h-full object-cover transition-all duration-500"
       />
 
       {/* Left Button */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 p-3 bg-gray-600 bg-opacity-50 text-black rounded-full hover:bg-opacity-70 transition cursor-pointer"
+        className="absolute top-[55%] left-4 transform -translate-y-1/2 p-3 bg-gray-600 bg-opacity-50 text-black rounded-full hover:bg-opacity-70 transition cursor-pointer"
       >
         {<GrPrevious />}
       </button>
@@ -59,7 +59,7 @@ const Carousel = () => {
       {/* Right Button */}
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 p-3 bg-gray-600  bg-opacity-50 text-black rounded-full hover:bg-opacity-70 transition cursor-pointer"
+        className="absolute top-[55%] right-4 transform -translate-y-1/2 p-3 bg-gray-600  bg-opacity-50 text-black rounded-full hover:bg-opacity-70 transition cursor-pointer"
       >
         {<GrNext />}
       </button>
