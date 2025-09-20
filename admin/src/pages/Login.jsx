@@ -4,18 +4,24 @@ import { IoEyeOutline } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 import axios from 'axios'
 import {authDataContext} from '../context/AuthContext';
+import { adminDataContext } from '../context/AdminContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   let [show, setShow] = useState(false);
   let [email, setEmail] = useState("")
   let [password, setPassword] = useState("")
   let {serverUrl} = useContext(authDataContext)
+  let {adminData, getAdmin} = useContext(adminDataContext)
+  let navigate = useNavigate()
 
 const AdminLogin=async(e)=>{
   e.preventDefault();
   try{
         const result = await axios.post(serverUrl + "/api/auth/adminlogin",{email,password},{withCredentials:true})
         console.log(result.data)
+        getAdmin()
+        navigate("/")
   }
   catch(error){
   console.log(error)
