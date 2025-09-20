@@ -1,10 +1,22 @@
 import React from 'react'
+import {Routes, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import Add from './pages/Add'
+import Lists from './pages/Lists'
+import Login from './pages/Login'
+import Orders from './pages/Orders'
 
 const App = () => {
   return (
-    <div className="text-3xl font-bold underline">
-      App component
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/add' element={<Add/>}/>
+        <Route path='/lists' element={<Lists/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/orders' element={<Orders/>}/>
+      </Routes>
+    </>
   )
 }
 
