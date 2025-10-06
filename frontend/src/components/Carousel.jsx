@@ -40,7 +40,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="pt-[70px] h-[calc(100vh-10px)] w-full relative overflow-hidden">
+    <div className="pt-[70px] lg:h-[calc(100vh-10px)] md:h-[calc(100vh-50px)] w-full relative overflow-hidden">
       {/* Image */}
       <img
         src={images[currentIndex]}
