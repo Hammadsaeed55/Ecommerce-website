@@ -3,6 +3,7 @@ import Carousel from '../components/Carousel'
 import Product from '../pages/Product'
 import OurPolicy from '../components/OurPolicy'
 import NewLetterBox from '../components/NewLetterBox'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Product/>
       <OurPolicy/>
       <NewLetterBox/>
+      <Footer/>
     </div>
   )
 }
