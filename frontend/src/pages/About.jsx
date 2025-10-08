@@ -1,12 +1,13 @@
 import React from 'react'
 import Title from "../components/Title"
 import about from "../assets/about.jpg"
+import NewLetterBox from '../components/NewLetterBox'
 
 const About = () => {
   return (
-    <div className='lg:w-[99vw] w-[100vw] min-h-[100vh] flex items-center justify-center flex-col bg-gradient-to-l from-[#141414] to-[#0c2025] gap-[50px] pt-[80px]'>
+    <div className='w-[99vw] md:w-[100vw] min-h-[100vh] flex items-center justify-center flex-col bg-gradient-to-l from-[#141414] to-[#0c2025] gap-[50px] pt-[80px]'>
       <Title text1={'ABOUT'} text2={'US'}/>
-      <div className='w-[100%] flex items-center justify-center flex-col lg:flex-row'>
+      <div className='w-[100%] flex items-center justify-center flex-col lg:flex-row pb-[20px]'>
         <div className='lg:w-[50%] w-[100%] flex items-center justify-center'>
           <img src={about} alt="" className='lg:w-[65%] w-[80%] shadow-md shadow-black rounded-sm' />
         </div>
@@ -21,6 +22,26 @@ const About = () => {
           <p className='lg:w-[80%] w-[100%] text-[white] md:text-[16px] text-[13px]'>Our mission is to redefine online shopping by delivering quality, affordability, and convenience. OneCart connects customer with trusted products and brands, offering a seamless, customer-focused experience that saves, adds value, and fits every lifestyle and need.</p>
         </div>
       </div>
+      <div className='w-[100%] flex items-center justify-center flex-col gap-[10px]'>
+        <Title text1={"WHY"} text2={'CHOOSE US'}/>
+        <div className='w-[80%] flex items-center justify-center lg:flex-row flex-col py-[40px]'>
+          <div className='lg:w-[33%] w-[90%] h-[250px] border-[1px] border-gray-100 flex items-center justify-center gap-[20px] flex-col px-[40px] py-[10px] text-[white] backdrop:blur-[2px] bg-[#ffffff0b]'>
+            <b className='text-[20px] font-semibold text-[#bff1f9]'>Quality Assurance</b>
+            <p>We guarantee quality through strict chechs, reliable sourcing, and a comitment to customer satisfaction always.</p>
+          </div>
+
+          <div className='lg:w-[33%] w-[90%] h-[250px] border-[1px] border-gray-100 flex items-center justify-center gap-[20px] flex-col px-[40px] py-[10px] text-[white] backdrop:blur-[2px] bg-[#ffffff0b]'>
+            <b className='text-[20px] font-semibold text-[#bff1f9]'>Convenience</b>
+            <p>Shop easily with fast delivery, simple navigation, secure checkout, and everything you need in one place.</p>
+          </div>
+
+          <div className='lg:w-[33%] w-[90%] h-[250px] border-[1px] border-gray-100 flex items-center justify-center gap-[20px] flex-col px-[40px] py-[10px] text-[white] backdrop:blur-[2px] bg-[#ffffff0b]'>
+            <b className='text-[20px] font-semibold text-[#bff1f9]'>Exceptional Customer Service</b>
+            <p>Our dedicated support team ensures quick responses, helpful solutions, and a shopping experience every time</p>
+          </div>          
+        </div>
+      </div>
+      <NewLetterBox/>
     </div>
   )
 }

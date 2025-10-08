@@ -9,6 +9,7 @@ import Product from './pages/Product'
 import Contact from './pages/Contact'
 import Nav from './components/Nav'
 import { userDataContext } from './context/UserContext'
+import ProductDetail from './pages/ProductDetail'
 
 const App = () => {
   const { userData } = useContext(userDataContext)
@@ -32,6 +33,9 @@ const App = () => {
         <Route path='/product'element={userData ? <Product/> : <Navigate to={'/login'} state={{from : location.pathname}}/>} />
 
         <Route path='/contact' element={userData ? <Contact/> : <Navigate to={'/login'} state={{from : location.pathname}}/>} />
+
+        <Route path='/productdetail/:productId' element={userData ? <ProductDetail/> : <Navigate to={'/login'} state={{from : location.pathname}}/>} />
+        
       </Routes>
     </>
   )
