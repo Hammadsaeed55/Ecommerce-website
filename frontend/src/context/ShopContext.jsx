@@ -2,6 +2,7 @@ import React, { Children, createContext, useContext, useEffect, useState } from 
 import { authDataContext } from './authContext'
 import { userDataContext } from './UserContext'
 import axios from 'axios'
+import { getUserCart } from '../../../backend/controllers/cartController'
 export const shopDataContext = createContext()
 const ShopContext = ({ children }) => {
 
@@ -50,12 +51,19 @@ const ShopContext = ({ children }) => {
       } catch (error) {
         console.log(error)
       }
-    } else {
-      console.log("Add error")
-    }
+    } 
 
-    // console.log(cartData)
   }
+
+  const getUserCart =async()=>{
+      try {
+        const result = await axios.post(serverUrl + '/api/cart/get',{},{withCredentials:true})
+        setCartItem(result.data)
+      }catch(error){
+        console.log(error)
+        // toast.error(error.message)
+      }
+    }
 
   const getCartCount = () => {
     let totalCount = 0;
@@ -76,6 +84,10 @@ const ShopContext = ({ children }) => {
   useEffect(() => {
     getProducts()
   }, [])
+
+  useEffect(()=>{
+    getUserCart()
+  },[])
 
   let value = {
     products, currency, delivery_fee, getProducts, search, setSearch, showSearch, setShowSearch, cartItem, addtoCart, getCartCount, setCartItem
